@@ -12,8 +12,8 @@ class FNR
     @sentence_array
   end    
 
-  def word_to_replace(word)
-    word_to_return =
+  def word_checker(word)
+    old_word =
     word_available = false
     @sentence_array.each do |w|
       if word == w
@@ -22,10 +22,25 @@ class FNR
     end
     if word_available
       @word = word
-      word_to_return = word
+      old_word = word
     else 
-      word_to_return = false
+      old_word = false
     end
-    word_to_return
+    old_word
+  end
+
+  def set_new_word(new_word)
+    @new_word = new_word
+  end
+
+  def word_switcher
+    new_sentence = String.new()
+    sentence_array.each do |word|
+      if @word == word
+        word = @new_word
+      end
+      new_sentence.concat("#{word} ")
+    end
+    new_sentence
   end
 end

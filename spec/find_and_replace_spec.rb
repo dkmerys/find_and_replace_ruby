@@ -11,4 +11,8 @@ describe('#find_and_replace') do
     fnr = FNR.new("Hello world")
     expect(fnr.word_to_replace("world")).to(eq("world"))
   end
+  it("saves inputted word from user as constructor") do
+    fnr = FNR.new("Hello world")
+    expect(fnr.word_to_replace("word")).to(eq(false))
+  end
 end
