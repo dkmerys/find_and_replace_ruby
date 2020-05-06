@@ -6,6 +6,7 @@ puts "Hi there! Write a sentence and we'll help you replace some of the words."
 sentence_data = File.open("writer_file.txt")
 sentence = sentence_data.read
 puts sentence_data
+
 fnr = FNR.new(sentence)
 puts "Which one of these words('#{fnr.sentence_array}) would you like to replace?"
 word = gets.chomp
